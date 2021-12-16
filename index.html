@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Me Button</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+
+        }
+        html{
+            background-color: rgb(29, 28, 28);
+        }
+
+        body{
+            width:60%;
+            height:100%;
+            background-color: grey;
+            font-family: sans-serif;
+            position: relative;
+            padding-bottom: -800px;
+        }
+
+        .button-container{
+            width:500px;
+            height:100px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            color:black;
+            text-shadow: white;
+            transform:translate(-50%);
+            animation: crack 5s linear 2s infinite alternate;
+            animation-name: crack;
+        }
+
+        .button{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+            position:relative;
+            width:100%;
+            height:100%;
+            top:50%;
+            left:50%;
+            color:black;
+            text-shadow: white;
+            border: 2px transparent black;
+            border-radius: 50px;
+            transition: all;
+            transition-duration: 0.5s;
+            box-shadow: left black;
+            box-shadow: right black;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .button::before{
+            left:-110%;
+            background-color: purple;
+            transition: all;
+            transition-duration: 0.5s;
+            position:absolute;
+            content: "";
+            width:100%;
+            height:100%;
+            top:0px;
+            transform: skew(20deg);
+            z-index: -1;
+        }
+
+        .button::after{
+            right:-110%;
+            background-color:green;
+            transition: all;
+            transition-duration: 0.5s;
+            position:absolute;
+            content: "";
+            width:100%;
+            height:100%;
+            top:0px;
+            transform: skew(20deg);
+            z-index: -1;
+        }
+
+        .button:hover:before{
+            left:-49%;
+            
+            
+        }
+
+        .button:hover:after{
+            right:-50%;
+        }
+        @keyframes crack{
+        from{left:100px;}
+        to {right: 200px;}
+    0%{ left:0px; top:0px;}
+  25%  {left:700px; top:0px;}
+  50%  {left:200px; bottom:900px;}
+  75%  {left:9px; top:900px;}
+  100% {left:0px; top:0px;}
+
+    }
+
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <div class="button">Hover over me!</div>
+    </div>
+</body>
+</html>
